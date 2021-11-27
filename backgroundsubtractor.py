@@ -1,8 +1,8 @@
 import cv2
 import numpy as np
 
-def backgroundsubtract(a):
-	cap =cv2.VideoCapture(a)
+def backgroundsubtract(path):
+	cap =cv2.VideoCapture(path)
 	bgsubs = cv2.createBackgroundSubtractorMOG2()
 	while True:
 		ret,frame =cap.read()
@@ -16,7 +16,7 @@ def backgroundsubtract(a):
 	cv2.destroyAllWindows()
 
 if __name__=="__main__":
-	a=input("enter path:")
-	if(a.isdigit()==True):
-		a=int(a)
-	backgroundsubtract(a)
+	path=input("enter path:")
+	if(path.isdigit()==True):
+		path=int(path)
+	backgroundsubtract(path)
